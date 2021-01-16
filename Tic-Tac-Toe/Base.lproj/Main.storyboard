@@ -1,24 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ixy-Ou-h34">
+                                <rect key="frame" x="0.0" y="1111" width="834" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Qdq-da-eWS"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="svk-3k-tkh"/>
+                                    <barButtonItem title="New Game" id="png-2p-Lki">
+                                        <connections>
+                                            <action selector="pressedNewGame:" destination="BYZ-38-t0r" id="0ol-4M-zLF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Qdq-da-eWS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Qdq-da-eWS"/>
+                                    </mask>
+                                </variation>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwu-rc-7qb">
+                                <rect key="frame" x="0.0" y="41" width="834" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lps-g8-S69"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="X's Turn" id="xIW-KG-3B0">
+                                        <barButtonItem key="leftBarButtonItem" title="New Game" id="Kky-6t-Gra">
+                                            <connections>
+                                                <action selector="pressedNewGame:" destination="BYZ-38-t0r" id="5Fp-3n-3Fk"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lps-g8-S69"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="lps-g8-S69"/>
+                                    </mask>
+                                </variation>
+                            </navigationBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ixy-Ou-h34" secondAttribute="bottom" id="03V-z7-mb9"/>
+                            <constraint firstItem="dwu-rc-7qb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0Hg-fJ-MBc"/>
+                            <constraint firstItem="Ixy-Ou-h34" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PNg-iG-9zz"/>
+                            <constraint firstItem="dwu-rc-7qb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VYa-aI-gRI"/>
+                            <constraint firstItem="Ixy-Ou-h34" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bTW-da-Nsf"/>
+                            <constraint firstItem="dwu-rc-7qb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="ujJ-Px-RiU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Ixy-Ou-h34"/>
+                                <exclude reference="dwu-rc-7qb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="03V-z7-mb9"/>
+                                <exclude reference="0Hg-fJ-MBc"/>
+                                <exclude reference="VYa-aI-gRI"/>
+                                <exclude reference="ujJ-Px-RiU"/>
+                                <exclude reference="PNg-iG-9zz"/>
+                                <exclude reference="bTW-da-Nsf"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Ixy-Ou-h34"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="03V-z7-mb9"/>
+                                <include reference="PNg-iG-9zz"/>
+                                <include reference="bTW-da-Nsf"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="dwu-rc-7qb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0Hg-fJ-MBc"/>
+                                <include reference="VYa-aI-gRI"/>
+                                <include reference="ujJ-Px-RiU"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="118.70503597122303" y="64.824120603015075"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
